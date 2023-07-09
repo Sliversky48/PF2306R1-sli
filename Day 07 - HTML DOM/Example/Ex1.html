@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <p id="demo-text"><span>1</span> - day la demo text</p>
+    <p class="text-center">this is a text-centered paragraph</p>
+    <p>click on this button to change color of #demo-text</p>
+    <p class="text-center">this is a text-centered paragraph 2</p>
+    <p>click on this button to change color 2</p>
+    <script>
+        //get element by its id
+        let demoText = document.getElementById("demo-text");
+        /*modify inner HTML
+        demoText.innerHTML= "<h1>Hello</h1>"*/
+        console.log(demoText.innerHTML);
+        demoText.style.color="red";
+        demoText.style.background="blue";
+        //get elements by tag name
+        let pTag=document.getElementsByTagName("p");
+        console.log(pTag);
+        console.log(pTag[1]);
+        //get elements by class name
+        let textClass=document.getElementsByClassName("text-center");
+        console.log(textClass);
+        console.log(textClass[0]);
+        //get an element inside another element
+        let body=document.getElementsByTagName("body");
+        console.log(body[0].children);
+    </script>
+</body>
+</html>

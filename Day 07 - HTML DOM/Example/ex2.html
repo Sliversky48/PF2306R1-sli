@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="content">
+        <p id="first-Para">this is my first paragraph</p>
+        <p id="second-Para">this is my second paragraph</p>
+    </div>
+    <script>
+        //get content container
+        let contentDiv = document.getElementById("content");
+        let firstPara = document.getElementById("first-Para");
+        //method 01 : Recommend
+        //create a new div and add it to the container, create element chỉ tạo các thẻ
+        const introParagraph = document.createElement("p");
+        introParagraph.innerText = "Third Paragraph";
+        //add to the bottom
+        //contentDiv.appendChild(introParagraph);
+        //ad before an element
+        contentDiv.insertBefore(introParagraph, firstPara);
+        //method 02 : Limit
+        contentDiv.innerHTML="<p id=\"first-Para\">this is my first paragraph</p>" + "<p id=\"second-Para\">this is my second paragraph</p>" + "<p id=\"third-Para\">this is my third paragraph</p>"
+
+    </script>
+</body>
+</html>

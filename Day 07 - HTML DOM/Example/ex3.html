@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="content">
+        <p id="first-Para">this is my first paragraph</p>
+        <p id="second-Para">this is my second paragraph</p>
+        <p>this content will not be removed</p>
+    </div>
+    <script>
+        let contentDiv = document.getElementById("content");
+        let firstPara = document.getElementById("first-Para");
+        let secondPara = document.getElementById("second-Para");
+        let pTag = document.getElementsByTagName("p");
+        //method 01
+        //firstPara.remove();
+        //method 02
+        //contentDiv.removeChild(secondPara);
+        //method 3 - remove all child nodes of the container element 
+        for (const key in pTag){
+            console.log(pTag[key]);
+            contentDiv.remove(pTag[key]);
+            
+        }
+    </script>
+</body>
+</html>
