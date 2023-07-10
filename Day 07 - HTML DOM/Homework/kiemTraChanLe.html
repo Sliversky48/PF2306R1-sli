@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiemTraChanLe</title>
+</head>
+<body>
+    <p>Nhập số</p><br>
+    <input type="number"  id="1" value="number">
+    <button type="button" onclick="kiemTra()">Kiểm tra</button>
+    <script>
+        function kiemTra() {
+            let number = document.getElementById("1").value;
+            if (number%2 == 0 && !isNaN(number)== true) {
+                alert(`${number} là số chẵn`);
+            }
+            else if (number%2 != 0 && !isNaN(number)== true) {
+                alert(`${number} là số lẻ`);
+            } else {
+                alert(`${number} không phải là số`);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
