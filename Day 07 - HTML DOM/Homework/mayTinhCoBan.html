@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mayTinhCoBan</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form method="post" name="Calculator" action="">
+        <input type="number" id="1" name="number1" placeholder="Nhập số A">
+        <input type="number" id="2" name="number2" placeholder="Nhập số B">
+    </form>
+    <br>
+    <button type="button" id="+" value="+" onclick="Addition()">Addition (+)</button>
+    <button type="button" id="-" value="-" onclick="Subtraction()">Subtraction (-)</button>
+    <button type="button" id="*" value="*" onclick="Multiplication()">Multiplication (*)</button>
+    <button type="button" id="/" value="/" onclick="Division()">Division (/)</button>
+    <div id="result"><br></div>
+    <script>
+        let ketQua = 0;
+        function Addition() {
+            let a = parseFloat(document.getElementById("1").value);
+            let b = parseFloat(document.getElementById("2").value);
+            let result = document.getElementById("result");
+            if (!isNaN(a) && !isNaN(b) == true) {
+                ketQua = a + b;
+                result.innerHTML = `<br>Result Addition: ${ketQua}`;
+                ketQua = 0;
+            } else {
+                alert("Nhập lại 2 số");
+            }
+        }
+        function Subtraction() {
+            let a = parseFloat(document.getElementById("1").value);
+            let b = parseFloat(document.getElementById("2").value);
+            let result = document.getElementById("result");
+            if (!isNaN(a) && !isNaN(b) == true) {
+                ketQua = a - b;
+                result.innerHTML = `<br>Result Addition: ${ketQua}`;
+                ketQua = 0;
+            } else {
+                alert("Nhập lại 2 số");
+            }
+        }
+        function Multiplication() {
+            let a = parseFloat(document.getElementById("1").value);
+            let b = parseFloat(document.getElementById("2").value);
+            let result = document.getElementById("result");
+            if (!isNaN(a) && !isNaN(b) == true) {
+                ketQua = a * b;
+                result.innerHTML = `<br>Result Addition: ${ketQua}`;
+                ketQua = 0;
+            } else {
+                alert("Nhập lại 2 số");
+            }
+        }
+        function Division() {
+            let a = parseFloat(document.getElementById("1").value);
+            let b = parseFloat(document.getElementById("2").value);
+            let result = document.getElementById("result");
+            if (!isNaN(a) && !isNaN(b) == true) {
+                ketQua = a / b;
+                result.innerHTML = `<br>Result Addition: ${ketQua}`;
+                ketQua = 0;
+            } else {
+                alert("Nhập lại 2 số");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
