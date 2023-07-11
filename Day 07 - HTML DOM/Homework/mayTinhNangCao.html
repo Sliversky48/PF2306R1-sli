@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mayTinhNangCao</title>
+    <style>
+        table{
+            border: 1px solid;
+        }
+        td{
+            padding: inline 2px;
+        }
+        button{
+            width:50px
+        }
+        input{
+            width: 98%;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+        <table>
+            <tr>
+                <th colspan="8"><b>Calculator</b></th>
+            </tr>
+            <tr>
+                <td colspan="8"><input type="text" name="so" id="so" dir="rtl" ></input></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" id="rad">Rad</button><button type="submit" id="deg">Deg</button></td>
+                <td><button type="submit" id="x!">x!</button></td>
+                <td><button type="submit" id="ngoac1" value='(' onclick=show(this)>(</button></td>
+                <td><button type="submit" id="ngoac2" value=')' onclick=show(this)>)</button></td>
+                <td><button type="submit" id="%" value='%' onclick=show(this)>%</button></td>
+                <td><button type="submit" id="AC">AC</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" id="lnv">lnv</button></td>
+                <td><button type="submit" id="sin" value='sin' onclick=show(this)>sin</button></td>
+                <td><button type="submit" id="ln" value='ln' onclick=show(this)>ln</button></td>
+                <td><button type="submit" id="7" value='7' onclick=show(this)>7</button></td>
+                <td><button type="submit" id="8" value='8' onclick=show(this)>8</button></td>
+                <td><button type="submit" id="9" value='9' onclick=show(this)>9</button></td>
+                <td><button type="submit" id="÷" value='÷' onclick=show(this)>÷</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" id="π" value='π' onclick=show(this)>π</button></td>
+                <td><button type="submit" id="cos" value='cos' onclick=show(this)>cos</button></td>
+                <td><button type="submit" id="log" value='log' onclick=show(this)>log</button></td>
+                <td><button type="submit" id="4" value='4' onclick=show(this)>4</button></td>
+                <td><button type="submit" id="5" value='5' onclick=show(this)>5</button></td>
+                <td><button type="submit" id="6" value='6' onclick=show(this)>6</button></td>
+                <td><button type="submit" id="x" value='x' onclick=show(this)>x</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" id="e" value='e' onclick=show(this)>e</button></td>
+                <td><button type="submit" id="tan" value='tan' onclick=show(this)>tan</button></td>
+                <td><button type="submit" id="√" value='√' onclick=show(this)>√</button></td>
+                <td><button type="submit" id="1" value='1' onclick=show(this)>1</button></td>
+                <td><button type="submit" id="2" value='2' onclick=show(this)>2</button></td>
+                <td><button type="submit" id="3" value='3' onclick=show(this)>3</button></td>
+                <td><button type="submit" id="-" value='-' onclick=show(this)>-</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" id="Ans">Ans</button></td>
+                <td><button type="submit" id="EXP">EXP</button></td>
+                <td><button type="submit" id="x^(y)">x^y</button></td>
+                <td><button type="submit" id="0" value='0' onclick=show(this)>0</button></td>
+                <td><button type="submit" id="." value='.' onclick=show(this)>.</button></td>
+                <td><button type="submit" id="=" value='=' onclick=basicMath()>=</button></td>
+                <td><button type="submit" id="+" value='+' onclick=show(this)>+</button></td>
+            </tr>
+        </table>
+    <script>
+        let number="";
+        function show(obj){
+            document.getElementById("so").value = number + obj.innerText;
+            number=document.getElementById("so").value;
+        }
+        function basicMath(){
+            parseFloat(number);
+            document.getElementById("so").value = number;
+        }
+    </script>
+</body>
+</html>
