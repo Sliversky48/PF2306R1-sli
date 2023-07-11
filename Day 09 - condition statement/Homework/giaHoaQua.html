@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giaHoaQua</title>
+</head>
+
+<body>
+    <h1>Giá hoa quả</h1>
+    <input type="text" name="input" value="" id="hoaQua">
+    <button type="submit" name="submit" onclick="getMoney()">Xem giá</button>
+    <p id="money"></p>
+    <script>
+        function getMoney() {
+            let fruit = document.getElementById("hoaQua").value;
+            let money = 0;
+            switch (fruit) {
+                case 'Ổi': money = 20000; break;
+                case 'Dưa hấu': money = 20000; break;
+                case 'Táo': money = 30000; break;
+                case 'Xoài': money = 30000; break;
+                case 'Cam': money = 40000; break;
+                case 'Chôm chôm': money = 40000; break;
+                case 'Măng cụt': money = 50000; break;
+            }
+            if (money != 0) {
+                document.getElementById("money").innerText= `${money} VNĐ/kg`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
