@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diemDaiHoc</title>
+    <style type="text/css">
+        #show{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <th colspan="2">Tính điểm ĐH khối D</th>
+        <tr>
+            <td><p>Môn Toán</p></td>
+            <td><input type="text" required id="diemToan" value="" size="4"></td>
+        </tr>
+        <tr>
+            <td><p>Môn Văn</p></td>
+            <td><input type="text" required id="diemVan" value="" size="4"></td>
+        </tr>
+        <tr>
+            <td><p>Môn Anh</p></td>
+            <td><input type="text" required id="diemAnh" value="" size="4"></td>
+        </tr>
+        <tr>
+            <td><p>Khu vực</p></td>
+            <td>
+                <select id="Kv" value="">
+                    <option>KV1</option>
+                    <option>KV2</option>
+                    <option>KV2-NT</option>
+                    <option>KV3</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" id="tinhDiem" onclick="tongDiem()">Tính điểm</button>
+    <p id="show"></p>
+
+    <script>
+        function tongDiem() {
+            let toan=parseFloat(document.getElementById("diemToan").value);
+            let van=parseFloat(document.getElementById("diemVan").value);
+            let anh=parseFloat(document.getElementById("diemAnh").value);
+            let kv=document.getElementById("Kv").value;
+            const KV1= 0.75 ; const KV2= 0.25 ; const KV2_NT= 0.5; const KV3= 0;
+            let tong=0;
+            switch (kv){
+                case "KV1":
+                    tong= toan+van+anh+KV1;
+                    break;
+                case "KV2":
+                    tong= toan+van+anh+KV2;
+                    break;
+                case "KV2-NT":
+                    tong= toan+van+anh+KV2_NT;
+                    break;
+                case "KV3":
+                    tong= toan+van+anh;
+                    break;
+            }
+            document.getElementById("show").innerHTML=`<b>Tổng điểm ĐH khối D của bạn là : ${tong}</b>`;
+        }
+    </script>
+</body>
+</html>
