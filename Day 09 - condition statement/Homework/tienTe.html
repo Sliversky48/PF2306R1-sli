@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tienTe</title>
+ 
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th colspan="2">From Currency</th>
+            <th colspan="2">To Currency</th>
+        </tr>
+        <tr>
+            <td><input id="tien" required type="text" value=""></td>
+            <td><select id="goc">
+                <option>VND</option>
+                <option>USD</option>
+                <option>JPY</option>
+            </select></td>
+            <td></td>
+            <td><select id="ketQua">
+                <option>VND</option>
+                <option>USD</option>
+                <option>JPY</option>
+            </select></td>
+            <td></td>
+            <td><button type="submit" onclick="tienTe()">Convert</button></td>
+        </tr>
+    </table>
+    <p id="show"></p>
+
+    <script>
+        function chuyenDoi(tienGoc, dauRa, money){
+            switch (tienGoc){
+                case "VND":
+                    switch (dauRa){
+                        case "USD": money= money/23774.299; break;
+                        case "JPY": money= money/170.3388; break;
+                    }
+                    break;
+                case "USD":
+                    switch (dauRa){
+                        case "VND": money= money*23774.299; break;
+                        case "JPY": money= money*139.691; break;
+                    }
+                    break;
+                case "JPY":
+                    switch (dauRa){
+                        case "VND": money= money*170.3388; break;
+                        case "USD": money= money/139.691; break;
+                    }
+                    break;
+            }
+            return money;
+        }
+        function tienTe(){
+            let tienGoc = document.getElementById("goc").value;
+            let money = parseFloat(document.getElementById("tien").value);
+            let moneyOut;
+            let dauRa = document.getElementById("ketQua").value;
+            
+            if (money >0 && (!isNaN(money)==true) && (tienGoc != dauRa)){
+                moneyOut=chuyenDoi(tienGoc, dauRa, money);
+                document.getElementById("show").innerHTML= `Result: ${moneyOut.toFixed(4)} ${dauRa}`;
+            }else{
+                alert("Giá trị bạn nhập vào không hợp lệ");
+            }
+        }
+        
+    </script>
+</body>
+</html>
