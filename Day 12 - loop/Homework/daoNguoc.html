@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daoNguoc</title>
+</head>
+<body>
+    <script>
+        function checkSo(a) {
+            if (!isNaN(a) && a>0) {
+                return true;
+            } else return false;
+        }
+
+        let num=parseInt(prompt("Nhập vào 1 số nguyên: "));
+        let out=" ", a, b=num;;
+        if (checkSo(num)){
+            do{
+                    a=num % 10;
+                    out = out + a;
+                    num = parseInt(num/10);
+            } while(num/10 > 0)
+            document.write(`Giá trị đảo ngược của ${b} là ${out}`);
+        }else alert("Giá trị bạn nhập không hợp lệ");
+
+    </script>
+</body>
+</html>
