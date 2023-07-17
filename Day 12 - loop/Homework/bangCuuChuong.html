@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cuuChuong</title>
+    <style>
+        tr,td{
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="table" border="1"></table>
+    <script>
+        let table = "";
+        let mulTable = document.getElementById("table")
+        for (let row = 1; row <= 10; row++) {
+            table += "<tr>"
+            for (let col = 2; col < 10; col++) {
+                table += "<td>" + `${col}*${row}=${(row * col)}` + "</td>"
+            }
+            table += "</tr>";
+        }
+        mulTable.innerHTML = table;
+    </script>
+    
+</body>
+</html>
