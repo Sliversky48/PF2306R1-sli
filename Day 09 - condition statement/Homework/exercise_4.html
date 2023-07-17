@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise_4</title>
+</head>
+
+<body>
+    <p>Nhập giá trị x của 1 điểm</p>
+    <input type="text" id="X" maxlength="1">
+    <p>Nhập giá trị y của 1 điểm</p>
+    <input type="text" id="Y" maxlength="1">
+    <br>
+    <br>
+    <button type="submit" onclick="kiemTra()">Submit</button>
+    <p id="show"></p>
+
+    <script>
+        function kiemTra() {
+            let x = parseFloat(document.getElementById("X").value);
+            let y = parseFloat(document.getElementById("Y").value);
+            let d = Math.sqrt(Math.pow(x - 0, 2) + Math.pow(y - 0, 2));
+            if (d <= 10) {
+                document.getElementById("show").innerHTML = `Point (${x},${y}) is in the circle`;
+            } else {
+                document.getElementById("show").innerHTML = `Point (${x},${y}) is not in the circle`;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

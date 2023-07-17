@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise_3</title>
+</head>
+<body>
+    <button type="submit" onclick="Run()">Run</button>
+    <p id="show"></p>
+
+    <script>
+        let year = parseInt(prompt("Enter year: (e.g., 2012): "));
+        let month =parseInt(prompt("Enter month: 1-12: "));
+        let day = parseInt(prompt("Enter the day of the month: 1-31: "));
+        function kiemTra(year, month, day){
+            if (year >0){
+                if (month >0 && month <12){
+                    switch (month){
+                        case 2 : check = day>29? false:true ; break;
+                        case 4: case 6: case 9: case 11: check = day>30? false:true; break;
+                        default : check = true ; break;
+                    }
+                }else check = false ;
+            }else check = false;
+            return check;
+        }
+        function Run(){
+            let check = kiemTra(year, month, day);
+            let h, m, k, j;
+            console.log(check);
+            if (check){
+                k= year%100; j= parseInt(year/100);
+                switch (month){
+                    case 3: m=3; break;
+                    case 4: m=4; break;
+                    case 5: m=5; break;
+                    case 6: m=6; break;
+                    case 7: m=7; break;
+                    case 8: m=8; break;
+                    case 9: m=9; break;
+                    case 10: m=10; break;
+                    case 11: m=11; break;
+                    case 12: m=12; break;
+                    case 1: m=13; break;
+                    case 2: m=14; break;
+                }
+
+                h = (day + (Math.round((26*m+26)/10)) + k + (parseInt(k/4)) + (parseInt(j/4)) -2*j-1) %7;
+                console.log(h, day, m, k, j);
+                switch (h){
+                    case 0: document.getElementById("show").innerHTML = "Day of the week is Saturday"; break;
+                    case 1: document.getElementById("show").innerHTML = "Day of the week is Sunday"; break;
+                    case 2: document.getElementById("show").innerHTML = "Day of the week is Monday"; break;
+                    case 3: document.getElementById("show").innerHTML = "Day of the week is Tuesday"; break;
+                    case 4: document.getElementById("show").innerHTML = "Day of the week is Wednesday"; break;
+                    case 5: document.getElementById("show").innerHTML = "Day of the week is Thursday"; break;
+                    case 6: document.getElementById("show").innerHTML = "Day of the week is Friday"; break;
+                }
+            }else alert("Giá trị bạn nhập không hợp lệ");
+        }
+    </script>
+</body>
+</html>

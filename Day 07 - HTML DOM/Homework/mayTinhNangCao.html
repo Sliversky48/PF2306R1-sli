@@ -26,7 +26,7 @@
                 <th colspan="8"><b>Calculator</b></th>
             </tr>
             <tr>
-                <td colspan="8"><input type="text" name="so" id="so" dir="rtl" ></input></td>
+                <td colspan="8"><input type="text" name="so" id="so" dir="rtl" value="0"></input></td>
             </tr>
             <tr>
                 <td colspan="2"><button type="submit" id="rad">Rad</button><button type="submit" id="deg">Deg</button></td>
@@ -79,6 +79,10 @@
             document.getElementById("so").value = number + obj.innerText;
             number=document.getElementById("so").value;
         }
+        function showOp(obj){
+            
+        }
+
         function basicMath(){
             parseFloat(number);
             document.getElementById("so").value = number;

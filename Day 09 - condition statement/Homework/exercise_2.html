@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>
+    <p>Enter the first 9 digits of an ISBN as integer</p>
+    <input type="text" id="first9" value="" maxlength="9">
+    <button type="submit" onclick="isbn()">Submit</button>
+    <p id="show"></p>
+
+    <script>
+        function kiemTra(text){
+            if (!isNaN(parseInt(text))== true && text.charAt(0) == "0"){
+                return true;
+            }else alert("Giá trị bạn nhập vào không hợp lệ");
+            
+        }
+        function isbn() {
+            let text = document.getElementById("first9").value;
+            //let check = kiemTra(text);
+            if (kiemTra(text)){
+                let a=text.charAt(0) , b=text.charAt(1) , c=text.charAt(2) , d=text.charAt(3) , e=text.charAt(4) , f=text.charAt(5) , g=text.charAt(6) , h=text.charAt(7), i=text.charAt(8);
+                let X= (a*1+b*2+c*3+d*4+e*5+f*6+g*7+h*8+i*9)%11;
+                if (X != 10){
+                    document.getElementById("show").innerHTML = `The ISBN-10 number is: ${text}${X}`;
+                }else document.getElementById("show").innerHTML= `The ISBN-10 number is: ${text}X`;
+            }else document.getElementById("show").innerHTML = "";
+            
+        }
+    </script>
+</body>
+</html>

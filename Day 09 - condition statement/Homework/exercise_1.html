@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+<body>
+    <p id="show"></p>
+
+    <script>
+        let random =Math.floor(Math.random()*12)+1;
+        let thang="";
+        switch (random){
+            case 1: thang="January"; break;
+            case 2: thang="February"; break;
+            case 3: thang="March"; break;
+            case 4: thang="April"; break;
+            case 5: thang="May"; break;
+            case 6: thang="June"; break;
+            case 7: thang="July"; break;
+            case 8: thang="August"; break;
+            case 9: thang="September"; break;
+            case 10: thang="October"; break;
+            case 11: thang="November"; break;
+            case 12: thang="December"; break;
+        }
+        document.getElementById("show").innerHTML = `Số ${random} tương ứng với tháng ${thang}`;
+    </script>
+</body>
+</html>
