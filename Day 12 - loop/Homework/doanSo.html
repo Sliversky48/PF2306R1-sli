@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoán số</title>
+</head>
+
+<body>
+    <button id="nut" type="submit" onclick="play()">Chơi</button>
+
+    <script>
+        function randomSo(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function checkSo(a, b) {
+            if (!isNaN(a) == true && !isNaN(b) == true) {
+                return true;
+            } else return false;
+        }
+        function play() {
+            let min = parseInt(prompt("Nhập vào giá trị nhỏ nhất: "));
+            let max = parseInt(prompt("Nhập vào giá trị lớn nhất: "));
+            let i=1;
+            if (checkSo(min, max)) {
+                let random = randomSo(min, max);
+                for (; i < 4; i++) {
+                    let get = parseInt(prompt("Nhập con số bạn dự đoán: "));
+                    if (get==random){
+                        alert("Chúc mừng bạn đã đoán đúng.");
+                        break;
+                    }else{
+                        alert("Con số bạn dự đoán chưa đúng.");
+                    }
+                }
+                document.getElementById("nut").innerHTML="Chơi lại";
+            }else alert("Số bạn nhập không hợp lệ.");
+
+        }
+
+    </script>
+</body>
+
+</html>
