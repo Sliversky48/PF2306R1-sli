@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkSo(a, b) {
+            if (!isNaN(a) == true && !isNaN(b) == true) {
+                return true;
+            } else return false;
+        }
+        let a = parseInt(prompt("Nhập vào 1 số a: "));
+        let b = parseInt(prompt("Nhập vào 1 số b: "));
+        let min, max, tong = 0;
+        if (checkSo(a, b)) {
+            if (a > b) {
+                min = b; max = a;
+            } else {
+                min = a; max = b;
+            }
+            for (let i = Math.abs(max) - Math.abs(min) + 1; i > 0; i--) {
+                tong += max;
+                max -= 1;
+            }
+            document.write(tong);
+        }else alert("Giá trị bạn nhập không hợp lệ");
+
+    </script>
+</body>
+
+</html>
