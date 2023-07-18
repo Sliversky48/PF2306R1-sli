@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="show"></p>
+
+    <script>
+        let numbers=parseInt(prompt("Nhập số lượng nguyên tố muốn hiển thị: "));
+        let count=0, N=2, show="";
+        function checkSo(a) {
+            if (!isNaN(a) == true && a>0) {
+                return true;
+            } else return false;
+        }
+        if (checkSo(numbers)){
+            while (count<numbers){
+                let check=true;
+                for (let i=1; i<=N; i++){
+                    if (N%i==0 && i!=1 && i!=N ){
+                        check=false;
+                        break;
+                    }
+                }
+                if (check){
+                    show= show + N + " ";
+                    count++;  
+                }
+                N++; 
+            }
+            document.getElementById("show").innerHTML= show;
+        }else alert("Giá trị bạn nhập không hợp lệ");
+
+        
+    </script>
+</body>
+</html>
