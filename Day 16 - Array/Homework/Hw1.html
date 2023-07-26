@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm có sẵn</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    
+    <script>
+        let myColor = ["red", "green", "white", "black"]; //Bài 1
+
+        let number = (prompt("Number: ")).toString(); //Bài 2
+        let result = [number[0]];
+        document.getElementById("demo").innerHTML = myColor.join(" ");
+        for (let i=1; i<number.length; i++) {
+            if (number[i-1] %2 == 0 && number[i] %2 == 0){
+                result.push(`-${number[i]}`);
+            }else result.push(number[i]);
+        }
+        document.getElementById("demo2").innerHTML = result.join("");
+        
+        let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//Bài 3
+        let lower = "abcdefghijklmnopqrstuvwxyz";
+        let str = prompt("Nhập 1 chuỗi: "), out = [];
+        for (let i=0; i<str.length; i++){
+            if (upper.indexOf(str[i]) != -1){
+                out.push(str[i].toLowerCase());
+            }else if (lower.indexOf(str[i]) != -1){
+                out.push(str[i].toUpperCase());
+            }else{out.push(str[i]);}
+        }
+        document.getElementById("demo3").innerHTML = out.join('');
+
+    </script>
+</body>
+</html>
