@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Type anthing slowly</h2>
+    <textarea id="txt" cols="40" rows="10" onkeydown="typeTextArea();"></textarea>
+
+    <script>
+        let a = ['T','Ô','I',' ','L','À',' ','M','Ộ','T',' ','Đ','Ứ','A',' ','N','G','Ố','C','!','!','!'] ; n = "";
+        function typeTextArea() {
+            let j = (document.getElementById("txt").value).length;
+            document.getElementById("txt").value="";
+            if (j > 0) {
+                for (var i = 0; i < j; i++) {
+                    n = n + a[i];
+                    if (i >= 22) {
+                        n = "";
+                        break;
+                    }
+                }
+            }
+            document.getElementById("txt").value = n;
+            n = "";
+            setTimeout("typeTextarea()", 500);
+        }
+
+    </script>
+</body>
+
+</html>
