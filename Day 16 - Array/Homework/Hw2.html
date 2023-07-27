@@ -22,26 +22,28 @@
         }
         function winners(x, y) {
             let win = 0;
-            console.log(board[x][y]);
             for (let i = 0; i < 10; i++) {
                 for (let j = 0; j < 10; j++) {
                     if (i == 0) {
-                        if (board[i][j - 1] == board[x][y] && board[i][j + 1] == board[x][y]) { win = 1; break; }
+                        if (board[i][j - 1] == board[x][y] && board[i][j + 1] == board[x][y] && board[i][j] == board[x][y]) { win = 1; break; }
                     } else {
-                        if (board[i - 1][j - 1] == board[x][y] && board[i + 1][j + 1] == board[x][y]) {
+                        if (board[i - 1][j - 1] == board[i][j] && board[i + 1][j + 1] == board[i][j] && board[i][j] == board[x][y]) {
                             win = 1;
                             break;
-                        } else if (board[i - 1][j + 1] == board[x][y] && board[i + 1][j - 1] == board[x][y]) {
+                        } else if (board[i - 1][j + 1] == board[i][j] && board[i + 1][j - 1] == board[i][j] && board[i][j] == board[x][y]) {
                             win = 1;
                             break;
-                        } else if (board[i - 1][j] == board[x][y] && board[i + 1][j] == board[x][y]) {
+                        } else if (board[i - 1][j] == board[i][j] && board[i + 1][j] == board[i][j] && board[i][j] == board[x][y]) {
                             win = 1;
                             break;
-                        } else if (board[i][j - 1] == board[x][y] && board[i][j + 1] == board[x][y]) {
+                        } else if (board[i][j - 1] == board[i][j] && board[i][j + 1] == board[i][j] && board[i][j] == board[x][y]) {
                             win = 1;
                             break;
                         }
                     }
+                }
+                if (win == 1){
+                    break;
                 }
             }
             return win;
@@ -60,7 +62,7 @@
                 for (let i = 0; i < 10; i++) {
                     data += "<br/>";
                     for (let j = 0; j < 10; j++) {
-                        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                        data += board[i][j] + "&nbsp;&nbsp;";
                     }
                 }
                 b.innerHTML = "<hr/>" + data;
